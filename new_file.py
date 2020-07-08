@@ -26,4 +26,5 @@ def rock_paper_scissors():
       print('You win! ' + user_pick + ' beats ' + computer_pick)
     else:
       print('You lose! ' + computer_pick + ' beats ' + user_pick)
+  return
 rock_paper_scissors()
