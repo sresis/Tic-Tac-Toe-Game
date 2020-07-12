@@ -59,8 +59,17 @@ def words_in_common(words1, words2):
         ... )
         []
     """
+    # creates a set of only the unique words in words1
+    unique_words1 = set(words1)
+ 
+    in_common_words = [word
+                    for word in unique_words1
+                    if word in words2]
+    
+    in_common_words.sort()
 
-    return ['the wrong thing']
+
+    return in_common_words
 
 
 def every_other_item(items):
@@ -71,8 +80,10 @@ def every_other_item(items):
        >>> every_other_item(['a', 400, True, 'b', 0])
        ['a', True, 0]
     """
+    every_other_item_list = items[::2]
 
-    return ['the wrong thing']
+    return every_other_item_list
+"""print(every_other_item(['a', 400, True, 'b', 0]))"""
 
 
 def smallest_n_items(items, n):
@@ -96,4 +107,11 @@ def smallest_n_items(items, n):
         [1, 1]
     """
 
-    return []
+    # sorts list
+    items.sort()
+    smallest_integers = items[0:n]
+
+    return smallest_integers[::-1]
+"""print(smallest_n_items([2, 6006, 700, 42, 6, 59], 3))
+print(smallest_n_items([1, 1, 1, 1, 1, 1], 2))
+print(smallest_n_items([3, 4, 5], 0))"""
