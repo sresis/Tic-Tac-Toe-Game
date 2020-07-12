@@ -23,8 +23,10 @@ def print_indices(items):
         berry 1
         cherry 2
     """
+    for i in range(len(items)):
+        print(items[i], i)
 
-    print("Nothing at all")
+print_indices(['apple', 'berry', 'cherry'])
 
 
 def words_in_common(words1, words2):

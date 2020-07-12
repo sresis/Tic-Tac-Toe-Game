@@ -270,8 +270,8 @@ def return_tuple(word):
     return new_tuple
 
 
-print(return_tuple('hi'))
-print(return_tuple('gretings'))
+# print(return_tuple('hi'))
+# print(return_tuple('gretings'))
 
 
 
