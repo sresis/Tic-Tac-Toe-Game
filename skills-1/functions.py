@@ -21,12 +21,12 @@ Return:
     - True or False (bool)
 """
 
-# Write your function here
-
+#sets hometown as global variable
 HOMETOWN = 'Palatine'
 
 def is_hometown(town):
 
+    # returns evaluation of whether town is the same as my hometown
     return town == HOMETOWN
 
 """print(is_hometown('Chicago'))
@@ -48,7 +48,9 @@ Return:
 """
 
 # Write your function here
+
 def return_full_name(first, last):
+
     full_name = (f'{first} {last}')
 
     return full_name
@@ -81,7 +83,7 @@ Arguments:
 
 # Write your function here
 def print_hometown_greeting(first, last, town):
-
+    # evaluates which greeting to print based on if person is from hometown
     if is_hometown(town):
         print(f"Hi {first} {last}, we're from the same place!")
     else:
@@ -111,8 +113,9 @@ Return:
     - True or False (bool)
 """
 
-# Write your function here
+# sets berries as global variable
 BERRIES = ['strawberry', 'raspberry', 'blackberry', 'currant']
+
 def is_berry(fruit):
 
     return fruit in BERRIES
@@ -134,8 +137,6 @@ Arguments:
 Return:
     - Shipping cost (int)
 """
-
-# Write your function here
 def return_shipping_cost(item):
 
     if item in BERRIES:
@@ -171,11 +172,12 @@ Return:
     - Total price after taxes and fees (float)
 """
 
-# Write your function here
+# sets tax rates/fees as global variables
 CA_TAX = .03
 PA_FEE = 2
 MA_TAX_UNDER_100 = 1
 MA_TAX_OVER_100 = 3
+# function to return the total cost after taxes/special fees
 def return_total_cost(base_price, state, tax = .05):
 
     price_with_tax = int(base_price) * (1 + float(tax))
@@ -190,6 +192,7 @@ def return_total_cost(base_price, state, tax = .05):
             total_price = price_with_tax + MA_TAX_UNDER_100
         else:
             total_price = price_with_tax + MA_TAX_OVER_100
+    # if not in CA, PA, MA --> total pricce is price with tax
     else:
         total_price = price_with_tax
 
@@ -220,9 +223,8 @@ Return:
     - A list with arguments added to the end (list)
 """
 
-# Write your function here
-
 def add_to_list(list, *items):
+
     for item in items:
         list.append(item)
 
@@ -257,7 +259,6 @@ Return:
     - (word, wordx3) (tuple)
 """
 
-# Write your function here
 def return_tuple(word):
 
     # defines inner function to multiply given word by 3x
@@ -267,6 +268,7 @@ def return_tuple(word):
 
     # creates tuple consisting of word and word produced in inner function
     new_tuple = (word, return_word_3x(word))
+    
     return new_tuple
 
 
