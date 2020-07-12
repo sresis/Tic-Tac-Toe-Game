@@ -194,11 +194,13 @@ def return_total_cost(base_price, state, tax = .05):
         total_price = price_with_tax
 
     return total_price
-print(return_total_cost(5, 'CA', .1))
+
+# ** think if you want to round these
+"""print(return_total_cost(5, 'CA', .1))
 print(return_total_cost(10, 'IL'))
 print(return_total_cost(100, 'MA'))
 print(return_total_cost(200, 'MA'))
-print(return_total_cost(200, 'PA', .1))
+print(return_total_cost(200, 'PA', .1))"""
 
 """PROMPT 7
 
@@ -219,6 +221,16 @@ Return:
 """
 
 # Write your function here
+
+def add_to_list(list, *items):
+    for item in items:
+        list.append(item)
+
+    return list
+
+# print(add_to_list(['apple', 'pear', 'grape'], 'berries', 'plums', 'eggs'))
+# print(add_to_list(['abc'], 1, 2, 'cde'))
+
 
 
 """PROMPT 8
@@ -246,3 +258,20 @@ Return:
 """
 
 # Write your function here
+def return_tuple(word):
+
+    # defines inner function to multiply given word by 3x
+    def return_word_3x(word):
+        new_word = word * 3
+        return new_word
+
+    # creates tuple consisting of word and word produced in inner function
+    new_tuple = (word, return_word_3x(word))
+    return new_tuple
+
+
+print(return_tuple('hi'))
+print(return_tuple('gretings'))
+
+
+
