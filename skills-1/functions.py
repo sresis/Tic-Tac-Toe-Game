@@ -23,6 +23,14 @@ Return:
 
 # Write your function here
 
+HOMETOWN = 'Palatine'
+
+def is_hometown(town):
+
+    return town == HOMETOWN
+
+"""print(is_hometown('Chicago'))
+print(is_hometown('Palatine'))"""
 
 """PROMPT 2
 
@@ -40,9 +48,16 @@ Return:
 """
 
 # Write your function here
+def return_full_name(first, last):
+    full_name = (f'{first} {last}')
 
+    return full_name
 
-"""PROMPT 3
+# print(return_full_name('Stephanie', 'Resis'))
+
+    
+"""
+PROMPT 3
 
 Write a function that prints a greeting.
 
@@ -65,7 +80,15 @@ Arguments:
 """
 
 # Write your function here
+def print_hometown_greeting(first, last, town):
 
+    if is_hometown(town):
+        print(f"Hi {first} {last}, we're from the same place!")
+    else:
+        print(f"Hi {first} {last}, I'd like to visit {town}!")
+
+# print(print_hometown_greeting('Abby', 'Adams', 'Palatine'))
+# print(print_hometown_greeting('Bob', 'Smith', 'Los Angeles'))
 
 """PROMPT 4
 
@@ -89,6 +112,14 @@ Return:
 """
 
 # Write your function here
+BERRIES = ['strawberry', 'raspberry', 'blackberry', 'currant']
+def is_berry(fruit):
+
+    return fruit in BERRIES
+
+# print(is_berry('currant'))
+# print(is_berry('durian'))
+
 
 
 """PROMPT 5
@@ -105,7 +136,14 @@ Return:
 """
 
 # Write your function here
+def return_shipping_cost(item):
 
+    if item in BERRIES:
+        return int(0)
+    else:
+        return int(5)
+# print(return_shipping_cost('strawberry'))
+# print(return_shipping_cost('eggs'))
 
 """PROMPT 6
 
@@ -134,7 +172,33 @@ Return:
 """
 
 # Write your function here
+CA_TAX = .03
+PA_FEE = 2
+MA_TAX_UNDER_100 = 1
+MA_TAX_OVER_100 = 3
+def return_total_cost(base_price, state, tax = .05):
 
+    price_with_tax = int(base_price) * (1 + float(tax))
+    
+    # if state is CA, PA, MA --> add special tax
+    if state == 'CA':
+        total_price = price_with_tax * (1 + float(CA_TAX))
+    elif state == 'PA':
+        total_price = price_with_tax + PA_FEE
+    elif state == 'MA':
+        if base_price <= 100:
+            total_price = price_with_tax + MA_TAX_UNDER_100
+        else:
+            total_price = price_with_tax + MA_TAX_OVER_100
+    else:
+        total_price = price_with_tax
+
+    return total_price
+print(return_total_cost(5, 'CA', .1))
+print(return_total_cost(10, 'IL'))
+print(return_total_cost(100, 'MA'))
+print(return_total_cost(200, 'MA'))
+print(return_total_cost(200, 'PA', .1))
 
 """PROMPT 7
 
