@@ -196,14 +196,14 @@ def return_total_cost(base_price, state, tax = .05):
     else:
         total_price = price_with_tax
 
-    return total_price
+    return round(total_price,2)
 
 # ** think if you want to round these
-"""print(return_total_cost(5, 'CA', .1))
-print(return_total_cost(10, 'IL'))
-print(return_total_cost(100, 'MA'))
-print(return_total_cost(200, 'MA'))
-print(return_total_cost(200, 'PA', .1))"""
+# print(return_total_cost(5, 'CA', .1))
+# print(return_total_cost(10, 'IL'))
+# print(return_total_cost(100, 'MA'))
+# print(return_total_cost(200, 'MA'))
+# print(return_total_cost(200, 'PA', .1))
 
 """PROMPT 7
 
@@ -268,7 +268,7 @@ def return_tuple(word):
 
     # creates tuple consisting of word and word produced in inner function
     new_tuple = (word, return_word_3x(word))
-    
+
     return new_tuple
 
 
