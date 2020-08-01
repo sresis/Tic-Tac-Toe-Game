@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.7em;
+  width: 600px;
+  margin: 0 auto;
+  counter-reset: promptcount;
+  padding-bottom: 200px;
+}
+
+code {
+  color: #ee1431;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 500;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.1em;
+}
+
+cite {
+  font-weight: bold;
+}
+
+header {
+  margin: 3em 0;
+}
+
+article {
+  margin: 6em 0;
+  border-top: 2px solid #ee1431;
+}
+
+article > h2 {
+  margin-top: 0.5em;
+}
+
+article > h2:before {
+  counter-increment: promptcount;
+  content: counter(promptcount) '. ';
+}
+
+button, input[type="submit"] {
+  font-size: 1em;
+  padding: 0.25em 0.5em;
+  border-radius: 3px;
+  background: #ee1431;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: #a80016;
+}
+
+.prompt-text {
+  margin: 0.25em 0.25em 1em 0.25em;
+  padding: 0.5em;
+  border: 1px dashed black;
+}
+
+.prompt-text p:first-child {
+  margin-top: 0;
+}
+
+.prompt-text p:last-child {
+  margin-bottom: 0;
+}
+
+#update-paragraph-colors .problem-area {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#update-paragraph-colors .problem-area p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 3em;
+  border: 1px solid black;
+  margin: 0.25em;
+  font-weight: bold;
+}
+
+#display-color {
+  font-size: 2em;
+  margin-top: 0.1em;
+  padding-left: 0.5em;
+}
+
+footer {
+  border-top: 2px solid #ee1431;
+}
+
+footer p {
+  font-size: 2em;
+}

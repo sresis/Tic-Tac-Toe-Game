@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>Practice JavaScript</title>
   <link rel="stylesheet" href="static/styles.css">
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -36,6 +40,13 @@
 <script>
   "use strict";
 
+  const button = document.querySelector('#popup-alert-button');
+
+  button.addEventListener('click', () => {
+    alert('Popup alert!');
+  }
+  );
+
   // TODO: replace this with your code
 </script>
 
@@ -55,7 +66,7 @@
 </p>
 
 <fieldset>
-  <form id="multiplying-form" action="/nope">
+  <form id="multiplying-form" >
     I want all multiples of
     <select id="mults-of" name="mults-of">
       <option value="2">2</option>
@@ -77,8 +88,28 @@
 
 <script>
   "use strict";
+  var numberArray = [];
 
-  // TODO: replace this with your code
+  const multsForm = document.querySelector('#multiplying-form');
+  var multsOf = document.getElementById("mults-of");
+  var upTo = document.getElementById("max");
+
+
+  multsForm.addEventListener('submit', () => {
+    event.preventDefault();
+    var i = 0;
+    while (i < upTo.value) {
+      if (i % multsOf.value === 0) {
+        numberArray.push(i);
+      }
+      i += 1;
+    }
+    console.log(numberArray);
+    document.querySelector('#multiples-go-here').innerHTML = numberArray;
+    numberArray = [];
+
+  });
+
 </script>
 
 <div class="hint">
@@ -109,7 +140,11 @@
 <script>
   "use strict";
 
-  // TODO: replace this with your code
+  $('.find-me').on('click', () => {
+    alert('alert powered by jQuery!');
+
+  })
+
 </script>
 
 <div class="hint">
@@ -127,7 +162,7 @@
 </p>
 
 <fieldset>
-  <form action="/oh-no-do-not-go-here" id="agreeable-form">
+  <form id="agreeable-form">
     What's your favorite food?
     <input type="text" name="favorite-food" required
            id="favorite-food-input">
@@ -139,7 +174,11 @@
 <script>
   "use strict";
 
-  // TODO: replace this with your code
+  $('#agreeable-form').on('submit', (evt) => {
+    evt.preventDefault();
+    var userInput = $('#favorite-food-input').val();
+    $('#agreeable-text').html(`I like ${userInput}, too.`);
+  })
 </script>
 
 <div class="hint">
@@ -188,7 +227,18 @@
     $('#puppies-go-here').append(`<img src="${url}">`);
   }
 
-  // TODO: replace this with your code
+
+$('#puppy-form').on('submit', (evt) => {
+  evt.preventDefault();
+  const formData = {
+    'num-puppies': $('#num-puppies').val()
+  }
+  $.post('/api/puppies', formData, (response) => {
+    alert('success');
+    $('#puppies-go-here').html('hii');
+  });
+});
+
 </script>
 
 <div class="hint">

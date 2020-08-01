@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Skills 4</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script
+      src="http://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header id="intro">
+      <h1>JavaScript Assessment</h1>
+      <p>
+        Use JavaScript to solve each numbered prompt below! <strong>There are
+        5 prompts total.</strong> Add your solution code to an external
+        JavaScript file called <cite>static/assessment.js</cite>. The file has
+        already been imported for you (see the <code>&lt;script&gt;</code> tag
+        at the bottom of the page).
+      </p>
+      <p>
+        <strong>You can only use JavaScript to fulfill each prompt;</strong>
+        you cannot change any other file besides
+        <cite>static/asessment.js</cite>.
+      </p>
+      <p>
+        For all problems, you can use built-in JavaScript <em>or</em> jQuery.
+        The choice is yours! We have already imported jQuery for you :)
+      </p>
+    </header>
+
+    <main id="assessment-prompts">
+      <article id="update-paragraph-colors" class="prompt">
+        <h2>Update Paragraph Colors</h2>
+
+        <section class="prompt-text">
+          <p>
+            Update the <cite>color</cite> and <cite>background</cite> of
+            the paragraphs with the class, <cite>light-or-dark</cite>, below.
+          </p>
+          <p>
+            If the paragraph contains the word <code>Light</code>, change
+            its color to <code>gray</code> and leave its background white.
+          </p>
+          <p>
+            If the paragraph contains the word <code>Dark</code>, change
+            its color to <code>white</code> and its background to
+            <code>black</code>.
+          </p>
+        </section>
+
+        <section class="problem-area">
+          <p class="light-or-dark">Light</p>
+          <p class="light-or-dark">Light</p>
+          <p class="light-or-dark">Dark</p>
+          <p class="light-or-dark">Light</p>
+          <p class="light-or-dark">Dark</p>
+          <p class="light-or-dark">Dark</p>
+          <p class="light-or-dark">Light</p>
+          <p class="light-or-dark">Dark</p>
+          <p class="light-or-dark">Light</p>
+          <p class="light-or-dark">Dark</p>
+          <p class="light-or-dark">Light</p>
+        </section>
+      </article>
+
+
+      <article id="change-button-text" class="prompt">
+        <h2>Change Button Text</h2>
+
+        <section class="prompt-text">
+          <p>
+            Add an event listener to the button below. When a user clicks
+            on the button, toggle the text in the button &mdash; so if the
+            button says <code>Log In</code>, change the text to
+            <code>Log Out</code>, and if the button says <code>Log Out</code>
+            change the text to <code>Log In</code>.
+          </p>
+        </section>
+
+        <section class="problem-area">
+          <button id="login">Log In</button>
+        </section>
+      </article>
+
+
+      <article id="prevent-form-submit" class="prompt">
+        <h2>Prevent Form Submission</h2>
+
+        <section class="prompt-text">
+          <p>
+            Normally, the form below will submit data to its <cite>action</cite>,
+            <code>/nonexistant-route</code>. Make it pop up an alert prompt
+            instead.
+          </p>
+        </section>
+
+        <section class="problem-area">
+          <form id="fav-color-form" action="/nonexistant-route">
+            <label for="fav-color-field">What is your favorite color?</label>
+            <input type="text" name="color" id="fav-color-field">
+
+            <input type="submit" value="Just an Alert, Please!">
+          </form>
+        </section>
+      </article>
+
+
+      <article id="random-color-changer" class="prompt">
+        <h2>Random Color Changer</h2>
+
+        <section class="prompt-text">
+          <p>
+            When a user clicks on the button below (the one that says
+            <code>Get a Random Color!</code>), generate a random color
+            and display it in the paragraph with the ID
+            <cite>display-color</cite>. <strong>You will retrieve the random
+            color from the server with AJAX.</strong>
+          </p>
+          <p>
+            <cite>GET /randomcolor</cite> is an endpoint in your Flask
+            server that will return a random color as a string. Use AJAX
+            to make a request to this endpoint. Then, in the callback,
+            use the response to set the color and content of the paragraph.
+          </p>
+          <p>
+            For example, if you get the color <code>'red'</code>, update
+            the paragraph so it reads <code>red</code> and make the text
+            in the paragraph red too.
+          </p>
+        </section>
+
+        <section class="problem-area">
+          <button id="random-colorer">Get a Random Color!</button>
+          <p>Your color is...</p>
+          <p id="display-color">None</p>
+        </section>
+      </article>
+
+
+      <article id="generate-todo-list" class="prompt">
+        <h2>Generate Todo List</h2>
+
+        <section class="prompt-text">
+          <p>
+            Your Flask server has an endpoint called <cite>GET /todos</cite>
+            that returns some JSON that looks like this:
+          </p>
+          <pre>
+            <code>{</code>
+            <code>  "todos": [</code>
+            <code>    {</code>
+            <code>      "title": "Get groceries",</code>
+            <code>      "is_done": false</code>
+            <code>    },</code>
+            <code>    {</code>
+            <code>      "title": "Take a break",</code>
+            <code>      "is_done": true</code>
+            <code>    }</code>
+            <code>  ]</code>
+            <code>}</code>
+          </pre>
+          <p>
+            Make an AJAX request to <cite>GET /todos</cite> and populate the
+            <cite>ul</cite> below with todo list items.
+          </p>
+          <p>
+            Each item in the todo list should be an <cite>li</cite> element.
+          </p>
+          <p>
+            <strong>Extra credit:</strong> make the todo items that are
+            done look visually different than the todo items that aren't
+            done.
+          </p>
+        </section>
+
+        <section class="problem-area">
+          <h3>Todo List</h3>
+
+          <ul id="todo-list"></ul>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>🎊🎈 Congrats, you're done!</p>
+    </footer>
+
+    <script src="/static/assessment.js"></script>
+  </body>
+</html>
