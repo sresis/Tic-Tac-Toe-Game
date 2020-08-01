@@ -15,8 +15,8 @@ def profile():
     """Return results from profile form."""
 
     fullname = request.form['name']
-    age = 'replace me'
-    occupation = 'replace me'
+    age = request.form['age']
+    occupation = request.form['occupation']
 
     # (pretend there's code to add the customer to the
     # database... we'll learn about that next week!)
